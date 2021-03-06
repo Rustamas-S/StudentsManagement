@@ -2,8 +2,7 @@ package SDA.Rustamas.practicalProject.controller;
 
 
 import SDA.Rustamas.practicalProject.model.Student;
-import SDA.Rustamas.practicalProject.service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
+import SDA.Rustamas.practicalProject.service.IStudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +14,10 @@ import java.util.List;
 @Controller
 public class StudentController {
 
-    private StudentService studentService;
+    private final IStudentService studentService;
 
-    @Autowired
-    public StudentController(StudentService studentService) {
+    //    @Autowired - nuo Spring naujos versijos nereikia
+    public StudentController(IStudentService studentService) {
         this.studentService = studentService;
     }
 

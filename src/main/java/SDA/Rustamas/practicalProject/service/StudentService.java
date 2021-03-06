@@ -3,17 +3,16 @@ package SDA.Rustamas.practicalProject.service;
 
 import SDA.Rustamas.practicalProject.model.Student;
 import SDA.Rustamas.practicalProject.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StudentService {
+public class StudentService implements IStudentService {
 
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
-    @Autowired
+    //    @Autowired - nuo Spring naujos versijos nereikia
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
