@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class StudentService {
 
-    @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public Student findById(Long id) {
         return studentRepository.getOne(id);

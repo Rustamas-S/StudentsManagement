@@ -1,4 +1,4 @@
-package SDA.Rustamas.practicalProject.conroller;
+package SDA.Rustamas.practicalProject.controller;
 
 
 import SDA.Rustamas.practicalProject.model.Student;
@@ -15,8 +15,12 @@ import java.util.List;
 @Controller
 public class StudentController {
 
-    @Autowired
     private StudentService studentService;
+
+    @Autowired
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping("/students")
     public String findAll(Model model) {
